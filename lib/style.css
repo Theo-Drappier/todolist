@@ -1,0 +1,31 @@
+.done {
+  text-decoration: line-through;
+}
+
+.container {
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  border: solid 1px;
+  font-size: 15px;
+  background-color: white;
+  box-shadow: 1px 1px 12px #555;
+  padding: 10px;
+}
+
+table.table {
+  width: 80%;
+}
+
+td.text-table {
+  width: 80%;
+}
+
+td.button-table {
+  width: 10%;
+}
+
+body {
+  font-family: monospace;
+  background-color: #e4e2e6;
+}

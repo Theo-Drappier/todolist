@@ -11,7 +11,8 @@ class Connection {
 
   //Constructor
   private function __construct() {
-    $this->_db = new PDO('mysql:host='.self::HOST.';dbname='.self::DBNAME, self::LOGIN, self::PASSWORD);
+    $this->_db = new PDO('mysql:host='.self::HOST.';dbname='.self::DBNAME,
+    self::LOGIN, self::PASSWORD);
   }
 
   public static function getInstance() {

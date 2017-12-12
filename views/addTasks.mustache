@@ -4,6 +4,7 @@
     <title>Add a task</title>
     <meta charset="utf-8"/>
     <link href="lib/style.css" rel="stylesheet">
+    <script src="../web/lib/script.js" type="text/javascript"></script>
   </head>
   <body>
     <div class="container">
@@ -11,10 +12,10 @@
       <hr />
       <h2>Add a task</h2>
       <p style="color: red">Veuillez saisir un nom pour votre tâche.</p>
-      <form method="POST" action="../app/insertTask.php">
-        <input name="task" placeholder="Name task" type="text"/>
-        <input type="submit" value="Envoyer"/>
-      </form>
+      <!--<form method="POST" action="../app/insertTask.php">-->
+      <input id="task" placeholder="Name task" type="text"/>
+      <button class="send" onclick='send()'>Envoyer</button>
+      <!--</form>-->
     </div>
   </body>
 </html>

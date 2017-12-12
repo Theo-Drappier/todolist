@@ -29,3 +29,11 @@ body {
   font-family: monospace;
   background-color: #e4e2e6;
 }
+
+.error {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}

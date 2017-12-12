@@ -4,5 +4,5 @@ function send() {
   xhttp.open('POST', '../app/insertTask.php', true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send('task=' + value);
-
+  window.location.href = '.';
 }

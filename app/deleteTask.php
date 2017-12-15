@@ -3,6 +3,7 @@ require '../vendor/autoload.php';
 use Todo\tools\Connection;
 
 $connection = Connection::getInstance();
+$id = $_POST['idTask'];
 
-$request = 'INSERT INTO task (action) VALUES ("'.$_POST['task'].'")';
+$request = 'DELETE FROM task WHERE id='.$id;
 $connection->exec($request);

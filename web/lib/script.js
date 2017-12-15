@@ -19,7 +19,7 @@ function deleteRow(element) {
   xhttp.open('POST', '../app/deleteTask.php', false);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send('idTask=' + id);
-  window.location.href = '.';
+  window.location.reload();
 }
 
 function updateRow(element) {
@@ -30,5 +30,5 @@ function updateRow(element) {
   xhttp.open('POST', '../app/updateTask.php', false);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send('idTask=' + id + '&state=' + state);
-  window.location.href = '.';
+  window.location.reload();
 }

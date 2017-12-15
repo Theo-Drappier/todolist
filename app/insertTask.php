@@ -4,5 +4,7 @@ use Todo\tools\Connection;
 
 $connection = Connection::getInstance();
 
-$request = 'INSERT INTO task (action) VALUES ("'.$_POST['task'].'")';
-$connection->exec($request);
+$task = $_POST['task'];
+$request = $connection->prepare('INSERT INTO task (action) VALUES (:task)',
+                                  [[':task', $task]]);
+$request->execute();

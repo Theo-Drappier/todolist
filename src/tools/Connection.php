@@ -36,7 +36,7 @@ class Connection {
 
   public function exec($request) {
     $this->_db->execute($request);
-  }
+  } 
 
   public function prepare($request, array $param) {
     $request = $this->_db->prepare($request);

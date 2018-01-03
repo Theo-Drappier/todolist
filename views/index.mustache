@@ -3,43 +3,47 @@
   <head>
     <title>To Do List</title>
     <meta charset="utf-8"/>
-    <link href="../web/lib/style.css" rel="stylesheet">
-    <script src="../web/lib/script.js" type="text/javascript"></script>
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="lib/style.css" rel="stylesheet"/>
+    <script src="lib/script.js" type="text/javascript"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="mt8 container">
       <h1>To Do List</h1>
       <hr />
-      <a href="addTasks.php"><button>Add a new task</button></a>
-      <h2>Your tasks</h2>
-      <table class="table">
-        <thead>
-          <th></th>
-          <th>Done?</th>
-          <th>Delete</th>
-        </thead>
-        <tbody>
-          {{#tasks}}
-            <tr>
-              <td class="text-table">
-                {{#state}}
-                  <strike>{{action}}<strike>
-                {{/state}}
-                {{^state}}
-                  {{action}}
-                {{/state}}
-              </td>
-              <td class="button-table">
-                <input type="hidden" value="{{state}}" id="state{{id}}" />
-                <button id="change{{id}}" onclick="updateRow(this);">O</button>
-              </td>
-              <td class="button-table">
-                <button id="delete{{id}}" onclick="deleteRow(this);">X</button>
-              </td>
-            </tr>
-          {{/tasks}}
-        </tbody>
-      </table>
+      <a class="btn btn-primary" href="addTasks.php">Add a new task</a>
+      <h2 class="mt8">Your tasks</h2>
+      <div class="row bold mb16">
+        <div class="col-md-8">
+          Name
+        </div>
+        <div class="col-md-2">
+          Done ?
+        </div>
+        <div class="col-md-2">
+          Delete
+        </div>
+      </div>
+      <hr />
+      {{#tasks}}
+        <div class="row ">
+            <div class="col-md-8">
+              {{#state}}
+                <strike>{{action}}</strike>
+              {{/state}}
+              {{^state}}
+                {{action}}
+              {{/state}}
+            </div>
+            <div class="col-md-2">
+              <input type="hidden" value="{{state}}" id="state{{id}}" />
+              <button class="btn btn-success" id="change{{id}}" onclick="updateRow(this);">O</button>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-danger" id="delete{{id}}" onclick="deleteRow(this);">X</button>
+            </div>
+        </div>
+      {{/tasks}}
     </div>
   </body>
 </html>

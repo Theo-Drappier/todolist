@@ -30,6 +30,10 @@ body {
   margin-bottom: 16px;
 }
 
+.mb8 {
+  margin-bottom: 8px;
+}
+
 .bold {
   font-weight: bold;
 }

@@ -28,12 +28,14 @@
       {{#tasks}}
         <div class="row mb8">
             <div class="col-md-8">
-              {{#state}}
-                <strike>{{action}}</strike>
-              {{/state}}
-              {{^state}}
-                {{action}}
-              {{/state}}
+              <span id="{{id}}">
+                {{#state}}
+                  <strike>{{action}}</strike>
+                {{/state}}
+                {{^state}}
+                  {{action}}
+                {{/state}}
+              </span>
             </div>
             <div class="col-md-2">
               <input type="hidden" value="{{state}}" id="state{{id}}" />

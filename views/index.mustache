@@ -3,49 +3,51 @@
   <head>
     <title>To Do List</title>
     <meta charset="utf-8"/>
-    <link href="lib/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="lib/style.css" rel="stylesheet"/>
-    <script src="lib/script.js" type="text/javascript"></script>
+    <link href="lib/css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="lib/css/style.css" rel="stylesheet"/>
+    <script src="lib/js/script.js" type="text/javascript"></script>
   </head>
   <body>
     <div class="mt8 container">
       <h1>To Do List</h1>
       <hr />
-      <a class="btn btn-primary mb16" href="addTasks.php">Add a new task</a>
-      <h2 class="mt8">Your tasks</h2>
-      <div class="row bold">
-        <div class="col-md-8">
-          Name
+      <div id="body-index">
+        <a class="btn btn-primary mb16" href="addTasks.php">Add a new task</a>
+        <h2 class="mt8">Your tasks</h2>
+        <div class="row bold">
+          <div class="col-md-8">
+            Name
+          </div>
+          <div class="col-md-2">
+            Done ?
+          </div>
+          <div class="col-md-2">
+            Delete
+          </div>
         </div>
-        <div class="col-md-2">
-          Done ?
-        </div>
-        <div class="col-md-2">
-          Delete
-        </div>
+        <hr />
+        {{#tasks}}
+          <div class="row mb8">
+              <div class="col-md-8">
+                <span id="{{id}}">
+                  {{#state}}
+                    <strike>{{action}}</strike>
+                  {{/state}}
+                  {{^state}}
+                    {{action}}
+                  {{/state}}
+                </span>
+              </div>
+              <div class="col-md-2">
+                <input type="hidden" value="{{state}}" id="state{{id}}" />
+                <button class="btn btn-success" id="change{{id}}" onclick="updateRow(this);">O</button>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-danger" id="delete{{id}}" onclick="deleteRow(this);">X</button>
+              </div>
+          </div>
+        {{/tasks}}
       </div>
-      <hr />
-      {{#tasks}}
-        <div class="row mb8">
-            <div class="col-md-8">
-              <span id="{{id}}">
-                {{#state}}
-                  <strike>{{action}}</strike>
-                {{/state}}
-                {{^state}}
-                  {{action}}
-                {{/state}}
-              </span>
-            </div>
-            <div class="col-md-2">
-              <input type="hidden" value="{{state}}" id="state{{id}}" />
-              <button class="btn btn-success" id="change{{id}}" onclick="updateRow(this);">O</button>
-            </div>
-            <div class="col-md-2">
-              <button class="btn btn-danger" id="delete{{id}}" onclick="deleteRow(this);">X</button>
-            </div>
-        </div>
-      {{/tasks}}
     </div>
   </body>
 </html>

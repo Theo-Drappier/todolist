@@ -13,7 +13,7 @@ function addRow() {
 }
 
 function deleteRow(element) {
-  var id = parseInt(element.id.replace('delete', ''));
+  var id = element.id.replace('delete', '');
   parentElement = element.parentNode.parentNode;
 
   var xhttp = new XMLHttpRequest();
@@ -24,7 +24,7 @@ function deleteRow(element) {
 }
 
 function updateRow(element) {
-  var id = parseInt(element.id.replace('change', ''));
+  var id = element.id.replace('change', '');
   var state = parseInt(document.getElementById('state' + id).value);
 
   var xhttp = new XMLHttpRequest();

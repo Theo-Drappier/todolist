@@ -17,7 +17,7 @@ function deleteRow(element) {
   parentElement = element.parentNode.parentNode;
 
   var xhttp = new XMLHttpRequest();
-  xhttp.open('DELETE', '../app/deleteTask.php?idTask=' + id, false);
+  xhttp.open('DELETE', '../app/deleteTask.php?idTask=' + id, true);
   //xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send(null);
   parentElement.parentNode.removeChild(parentElement);
@@ -28,7 +28,7 @@ function updateRow(element) {
   var state = parseInt(document.getElementById('state' + id).value);
 
   var xhttp = new XMLHttpRequest();
-  xhttp.open('POST', '../app/updateTask.php', false);
+  xhttp.open('POST', '../app/updateTask.php', true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send('idTask=' + id + '&state=' + state);
   modifyStateHTML(id, state);

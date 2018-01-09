@@ -16,9 +16,9 @@ function deleteRow(element) {
   var id = parseInt(element.id.replace('delete', ''));
 
   var xhttp = new XMLHttpRequest();
-  xhttp.open('POST', '../app/deleteTask.php', false);
-  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhttp.send('idTask=' + id);
+  xhttp.open('DELETE', '../app/deleteTask.php?idTask=' + id, false);
+  //xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhttp.send(null);
   window.location.reload();
 }
 

@@ -40,7 +40,6 @@ class Connection {
     foreach($param as $p) {
       $request->bindParam($p[0], $p[1]);
     }
-    var_dump($request);
     return $request;
   }
 }
